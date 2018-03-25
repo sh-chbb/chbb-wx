@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='chatList'>
+        <view wx:for="{{intereactions}}" class='audioView'>
+            <!-- <audio src='{{item.url}}' id='{{index}}' controls name='Input {{index+1}}'></audio> -->
+            <button bindtap='playAudio' class='audioButton' data-url='{{item.url}}'>{{item.response}}</button>
+        </view>
+    </view>
+</view>
+<view class='queryArea' style='bottom: {{iPhoneX ? 34 : 0}}px'>
+    <textarea class='inputQuery' placeholder='输入你想问的问题' auto-height='true' bindconfirm='queryConfirmed' bindinput='textInput'>
+
+    </textarea>
+    <view class='recordButton' bindtouchstart='startRecord' bindtouchend='endRecord'>
+        <image class='recordImg' src='../../res/record.png' mode='aspectFit'></image>
+    </view>
+</view>
